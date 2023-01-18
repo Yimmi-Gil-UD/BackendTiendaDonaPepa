@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.dto.InformacionProductosDTO;
 import com.example.demo.entity.Producto;
 import com.example.demo.service.ProductoService;
 
@@ -93,5 +94,10 @@ public class ProductoController {
 		productoService.saveProducto(productoObj);
 		return "Producto Actualizado";
 	}*/
+	
+	@GetMapping("/productosMasVendidos")
+	public List<InformacionProductosDTO> listarProductosMasVendidos(){
+		return productoService.productosMasVendidos();
+	}
 
 }

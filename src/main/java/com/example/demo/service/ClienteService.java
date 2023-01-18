@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.dto.InformacionClientesDTO;
 import com.example.demo.entity.Cliente;
 import com.example.demo.entity.Producto;
 import com.example.demo.repository.IClienteDao;
@@ -42,6 +43,10 @@ public class ClienteService {
 	
 	public Cliente encontrarPorDocumento(int documento) {
 		return iClienteDao.existsByDocumento(documento);
+	}
+	
+	public List<InformacionClientesDTO> clientesMayoresCompras(){
+		return iClienteDao.clientesMayoresCompra();
 	}
 	
 

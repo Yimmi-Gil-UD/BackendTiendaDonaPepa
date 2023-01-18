@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.dto.InformacionClientesDTO;
 import com.example.demo.entity.Cliente;
 import com.example.demo.service.ClienteService;
 
@@ -67,6 +68,11 @@ public class ClienteController {
 		map.put("response", "cliente actualizado");
 		return map;
 		//return "cliente actualizado";
+	}
+	
+	@GetMapping("/clientesMayoresCompras")
+	public List<InformacionClientesDTO> listarClientesMayoresCompras(){
+		return clienteService.clientesMayoresCompras();
 	}
 	
 }

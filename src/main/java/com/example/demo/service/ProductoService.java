@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.dto.InformacionProductosDTO;
 import com.example.demo.entity.Producto;
 import com.example.demo.repository.IProductoDao;
 
@@ -59,6 +60,10 @@ public class ProductoService {
 			return false;
 		}
 		 
+	}
+	
+	public List<InformacionProductosDTO> productosMasVendidos(){
+		return iProductoDao.BuscarProductosMasVendidos();
 	}
 	
 	
